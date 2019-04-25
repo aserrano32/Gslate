@@ -1,0 +1,38 @@
+﻿@model CodeChallenge.Models.User
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container mt-10">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            @if (ViewBag.UserList != null)
+            {
+                @Html.DropDownListFor(model => model.Id, ViewBag.UserList as SelectList, "--", new { @id = "userNameSelect" })
+                <img id="selectUser" src="~/Content/Images/down-arrow.png" class="downArrow" />
+            }
+        </div>
+
+        <div class="col-md-12 mt-10">
+
+            <table id="userData" class="table">
+                <thead>
+                    <tr>
+                        <th>Project Id</th>
+                        <th>Start Date</th>
+                        <th>Time to Start</th>
+                        <th>End Date</th>
+                        <th>Credits</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
